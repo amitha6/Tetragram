@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<title>WebGL - Simple triangle</title>
+	</head>
+	<body >
+		<canvas id="game-surface" tabindex="0" width="500" height="500" style="border: 3px solid hsl(9, 91%, 50%);"></canvas>
+		<canvas id="surface" tabindex="0" width="500" height="500" style="border: 3px solid hsl(120, 92%, 50%);"></canvas>
+		<br />
+		<i> Drawing Area &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;</i>
+		<i> &emsp; &emsp; &emsp; Reference Area</i>
+		<script language = "javascript">
+			function mode(){
+				InitDemo();
+				var count = 0;
+				fine();
+				document.addEventListener('keydown', function(event) {
+        			if(event.keyCode == 77) {
+						count++;
+						console.log("count:", count);
+						if(count%4 == 0){
+							fine();
+						}
+						else if(count%4 == 3){
+							clear();
+						}
+					}
+    			});
+			}
+		</script>
+		<script src="reference.js"></script>
+		<script src="clear.js"></script>
+		<script src="mode.js"></script>
+
+	</body>
+	<body onload = "mode();"></body>
+</html>
